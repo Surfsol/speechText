@@ -8,7 +8,7 @@ import {
   Pressable,
 } from 'react-native';
 import VoiceTest from './VoiceTest';
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import useCreateNote from "../hooks/useCreateNote";
 
 export default function Home() {
@@ -45,11 +45,11 @@ export default function Home() {
           <Pressable
             onPress={async () => {
               console.log('save');
-              try {
-                await mutate(speechText);
-              } catch (e) {
-                console.log(e);
-              }
+              // try {
+              //   await mutate(speechText);
+              // } catch (e) {
+              //   console.log(e);
+              // }
             }}
             style={{
               backgroundColor: '#007AFF',
