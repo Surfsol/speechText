@@ -7,10 +7,12 @@ import {
   Text,
 } from "react-native";
 import useNotes from "../hooks/useNotes";
+
 export const Posts = ({}) => {
-  const { data, isLoading, isSuccess } = useNotes();
-  console.log(data);
+ const { data, isLoading, isSuccess } = useNotes();
+  console.log('Home pposts',data);
   return (
+    
     <View style={styles.container}>
       {isLoading && (
         <React.Fragment>

@@ -1,13 +1,20 @@
+import React from 'react'
 import { StatusBar } from "expo-status-bar";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { StyleSheet, Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import Home from "./components/Home";
 import Notes from "./components/Notes";
 const Tab = createBottomTabNavigator();
+const queryClient = new QueryClient()
 export default function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -26,6 +33,7 @@ export default function App() {
         <Tab.Screen name="History" component={Notes} />
       </Tab.Navigator>
     </NavigationContainer>
+    </QueryClientProvider>
   );
 }
 const styles = StyleSheet.create({
