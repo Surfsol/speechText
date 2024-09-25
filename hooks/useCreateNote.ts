@@ -7,7 +7,7 @@ interface Note {
 
 const useCreateNote = () =>
   useMutation({
-    mutationFn: async (newNote: Omit<Note, 'id'>) => {
+    mutationFn: async (newNote: String) => {
       const { data } = await axios.post('http://localhost:3000/notes', newNote);
       return data;
     },

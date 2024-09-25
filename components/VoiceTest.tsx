@@ -27,6 +27,8 @@ type State = {
   results: string[];
   partialResults: string[];
 };
+
+
 class VoiceTest extends Component<Props, State> {
   state = {
     recognized: "",
@@ -47,6 +49,7 @@ class VoiceTest extends Component<Props, State> {
     Voice.onSpeechPartialResults = this.onSpeechPartialResults;
     Voice.onSpeechVolumeChanged = this.onSpeechVolumeChanged;
   }
+  
   componentWillUnmount() {
     Voice.destroy().then(Voice.removeAllListeners);
   }
@@ -105,10 +108,11 @@ class VoiceTest extends Component<Props, State> {
       partialResults: [],
       end: "",
     });
-    console.log('108 props',Voice)
+    //console.log('108 props', this.props, 'this.state', this.state)
     try {
-      await Voice.start("en-US");
-      this.props.onSpeechStart();
+      console.log('yes', {Voice})
+     await Voice.start("en-US");
+     this.props.onSpeechStart();
     } catch (e) {
       console.error('line 112',{e});
     }
