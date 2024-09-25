@@ -8,12 +8,11 @@ import {
   Pressable,
 } from 'react-native';
 import VoiceTest from './VoiceTest';
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import useCreateNote from "../hooks/useCreateNote";
 
 export default function Home() {
   const [speechText, setSpeechText] = useState('');
-  const { mutate, isError, isLoading, isSuccess } = useCreateNote();
+  const { mutate, isError, isSuccess } = useCreateNote();
   //const queryClient = useQueryClient();
 
   useEffect(() => {
@@ -45,11 +44,11 @@ export default function Home() {
           <Pressable
             onPress={async () => {
               console.log('save');
-              // try {
-              //   await mutate(speechText);
-              // } catch (e) {
-              //   console.log(e);
-              // }
+              try {
+                await mutate(speechText);
+              } catch (e) {
+                console.log(e);
+              }
             }}
             style={{
               backgroundColor: '#007AFF',
