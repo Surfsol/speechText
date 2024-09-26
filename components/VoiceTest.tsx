@@ -28,7 +28,6 @@ type State = {
   partialResults: string[];
 };
 
-
 class VoiceTest extends Component<Props, State> {
   state = {
     recognized: "",
