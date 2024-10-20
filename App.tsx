@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
+import About from "./components/About";
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
@@ -18,12 +19,14 @@ export default function App() {
             } else if (route.name === "History") {
               iconName = "history";
             }
+            console.log({route}); // Check if "History" is logged
             return <FontAwesome5 name={iconName} size={24} color="black" />;
           },
         })}
       >
         <Tab.Screen name="Record" component={Home} />
         <Tab.Screen name="History" component={Notes} />
+        <Tab.Screen name="About" component={About} />
       </Tab.Navigator>
     </NavigationContainer>
   );
