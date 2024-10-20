@@ -200,6 +200,8 @@ class VoiceTest extends Component<Props, State> {
                 justifyContent: "center",
               }}
             >
+
+
               <FontAwesome name="microphone" size={24} color="#fff" />
             </View>
           </Pressable>
