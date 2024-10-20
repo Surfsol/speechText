@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { MotiView } from "@motify/components";
 import {
   StyleSheet,
@@ -185,7 +185,7 @@ class VoiceTest extends Component<Props, State> {
                   />
                 );
               })}
-              {/* <FontAwesome name="microphone-slash" size={24} color="#fff" /> */}
+              <FontAwesome name="microphone-slash" size={24} color="#fff" />
             </View>
           </Pressable>
         ) : (
@@ -200,7 +200,9 @@ class VoiceTest extends Component<Props, State> {
                 justifyContent: "center",
               }}
             >
-              {/* <FontAwesome name="microphone" size={24} color="#fff" /> */}
+
+
+              <FontAwesome name="microphone" size={24} color="#fff" />
             </View>
           </Pressable>
         )}
