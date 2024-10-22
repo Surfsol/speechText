@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
+import TextSpeech from "./components/TextSpeech";
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
       >
         <Tab.Screen name="Record" component={Home} />
         <Tab.Screen name="History" component={Notes} />
+        <Tab.Screen name="TextSpeech" component={TextSpeech} />
       </Tab.Navigator>
     </NavigationContainer>
   );
